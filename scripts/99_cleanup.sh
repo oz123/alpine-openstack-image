@@ -3,6 +3,9 @@ set -ux
 # Disable Root SSH Login
 sed -i '/PermitRootLogin yes/d' /etc/ssh/sshd_config
 
+# Completely remove root password
+passwd -d root
+
 # Fill Disk with Zeros
 dd if=/dev/zero of=/EMPTY bs=1M
 
